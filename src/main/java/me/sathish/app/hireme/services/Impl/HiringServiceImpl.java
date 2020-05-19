@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 import me.sathish.app.hireme.data.HiringUser;
 import me.sathish.app.hireme.exceptions.HiringUserException;
 import me.sathish.app.hireme.services.HiringService;

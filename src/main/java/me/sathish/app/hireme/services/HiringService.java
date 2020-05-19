@@ -7,9 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface HiringService {
-  public List<HiringUser> findAll();
 
-  public void save(HiringUser hiringUser) throws HiringUserException;
+  List<HiringUser> findAll();
 
-  public HiringUser find(Long hiringUserID) throws HiringUserException;
+  void save(HiringUser hiringUser) throws HiringUserException;
+
+  HiringUser find(Long hiringUserID) throws HiringUserException;
 }

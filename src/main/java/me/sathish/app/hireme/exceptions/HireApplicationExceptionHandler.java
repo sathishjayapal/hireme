@@ -1,7 +1,6 @@
 package me.sathish.app.hireme.exceptions;
 
 import java.util.Date;
-import me.sathish.app.hireme.data.HiringUser;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -21,6 +20,7 @@ public class HireApplicationExceptionHandler extends ResponseEntityExceptionHand
         webRequest.getDescription (false));
     return new ResponseEntity<> (response, HttpStatus.INTERNAL_SERVER_ERROR);
   }
+
   @ExceptionHandler(HiringUserException.class)
   public final ResponseEntity<Object> handleHiringUserExceptionApplicationresponse(Exception ex,
       WebRequest webRequest) {
