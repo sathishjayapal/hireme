@@ -21,11 +21,19 @@ public class HireApplicationExceptionHandler extends ResponseEntityExceptionHand
         webRequest.getDescription (false));
     return new ResponseEntity<> (response, HttpStatus.INTERNAL_SERVER_ERROR);
   }
+  @ExceptionHandler(HiringUserNotFoundException.class)
+  public final ResponseEntity<Object> handleHiringUserNotFoundExceptionApplicationresponse(Exception ex,
+      WebRequest webRequest) {
+    HireExceptionResponse response = new HireExceptionResponse (new Date (), ex.getMessage (),
+        webRequest.getDescription (false));
+    return new ResponseEntity<> (response, HttpStatus.NOT_FOUND);
+  }
+
   @ExceptionHandler(HiringUserException.class)
   public final ResponseEntity<Object> handleHiringUserExceptionApplicationresponse(Exception ex,
       WebRequest webRequest) {
     HireExceptionResponse response = new HireExceptionResponse (new Date (), ex.getMessage (),
         webRequest.getDescription (false));
-    return new ResponseEntity<> (response, HttpStatus.NO_CONTENT);
+    return new ResponseEntity<> (response, HttpStatus.INTERNAL_SERVER_ERROR);
   }
 }
